@@ -59,3 +59,6 @@ dkms.conf
 /Exercise/跑马灯实验/HAL库版本/OBJ
 /Exercise/寄存器模板/OBJ
 /Exercise/蜂鸣器实验/OBJ
+/Exercise/STM32CubeMXTest/MDK-ARM/STM32CubeMXTest
+/Exercise/STM32CubeMXTest/Drivers/CMSIS
+/Exercise/按键输入实验/OBJ

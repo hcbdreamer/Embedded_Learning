@@ -55,7 +55,6 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 
-void Delay(__IO uint32_t nCount);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 
@@ -70,10 +69,6 @@ void Delay(__IO uint32_t nCount);
   *
   * @retval None
   */
-void Delay(__IO uint32_t nCount)
-{
-while(nCount--){}
-} 
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -108,12 +103,7 @@ int main(void)
   {
 
   /* USER CODE END WHILE */
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,GPIO_PIN_SET); //PC0 ÷√ 1
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_SET); //PC1 ÷√ 1
-	Delay(0x7FFFFF);
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,GPIO_PIN_RESET); //PC0 ÷√ 0
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_RESET); //PC1 ÷√ 0
-	Delay(0x7FFFFF);
+
   /* USER CODE BEGIN 3 */
 
   }
@@ -186,6 +176,7 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_SET);
